@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    background-color: #7fffd4;
+    height: 767px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .card{
+    border-radius: 8px;
+    text-align: center;
+    font-size: x-large;
+    width: 400px;
+    height: 350px;
+    background-color: #666b677c;
+}
+
+.card h3{
+    margin-top: 15px;
+}
+
+.card .sessions, .times, .start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.card input{
+    margin-top: 5px;
+    padding: 15px 40px;
+}
+
+.card button{
+    font-size: x-large;
+    padding: 10px 60px;
+    background-color: #174737;
+    border-radius: 5px;
+    color: white;
+}
