@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>temporizando de sessões</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <div class="container">
@@ -21,7 +20,8 @@
                 <div class="display_times" >
                    tempo: 00:00
                 </div>
-                <input id="times" required type="time">
+                <input type="number" id="min" placeholder="minutos">
+                <input type="number" id="sec" placeholder="segundos">
             </div>
             <div class="start">
                 <button type="button" id="btn" >iniciar</button>
@@ -29,5 +29,6 @@
         </div>
     </div>
     <script src="main.js" defer></script>
+
 </body>
 </html>
