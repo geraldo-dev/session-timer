@@ -18,7 +18,7 @@
     text-align: center;
     font-size: x-large;
     width: 400px;
-    height: 350px;
+    height: 380px;
     background-color: #666b677c;
 }
 
@@ -26,7 +26,7 @@
     margin-top: 15px;
 }
 
-.card .sessions, .times, .start{
+.card .sessions, .times {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,9 +39,16 @@
 }
 
 .card button{
+    margin-top: 10px;
     font-size: x-large;
-    padding: 10px 60px;
-    background-color: #174737;
+    padding: 10px 30px;
     border-radius: 5px;
     color: white;
+}
+
+.card #btn_reset {
+    background-color: chocolate;
+}
+.card #btn_start {
+    background-color: rgb(10, 143, 50);
 }
