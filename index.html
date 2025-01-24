@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./style.css">
+  <title>Simple Page</title>
+</head>
+<body>
+  
+    <div class="container">
+        <div class="card">
+            <h3>temporizador sessões</h3>
+            <div class="sessions">
+                <div class="display_sessions" >sessões: 1</div>
+                
+                <input id="sessions" value="1" type="number">
+            </div>
+            <div class="times">
+                <div class="display_times" >tempo: 00:00</div>
+                
+                <input type="number" id="min"  placeholder="minutos">
+                <input type="number" id="sec"  placeholder="segundos">
+            </div>
+            <div class="btn_actions">
+                <button type="button" onclick="session_timer()" id="btn_start" >iniciar</button>
+                <button type="button" onclick="location.reload('home.html')" id="btn_reset" >resetar</button>
+                
+            </div>
+        </div>
+    </div>
+  <script src="main.js" defer></script>
+
+</body>
+</html>
