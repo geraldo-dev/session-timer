@@ -14,14 +14,12 @@ function formtaTime(time){
     return res;
 }
 
-
-
 function session_timer(time_secunds){
 
     let time_renew = time_secunds;
     let time_count = time_secunds;
     
-    //exibir quantidade sessoes na tela
+    //display number of sessions on screen
     display_sessions.textContent = `sessões: ${session}`;
     
     let stopInterval = setInterval( () => {
@@ -29,26 +27,25 @@ function session_timer(time_secunds){
         let time_total_seconds = parseInt(time_count % 60).toFixed(0);
         let time_total_minutes = parseInt(time_count / 60).toFixed(0);
 
+        //format time
         time_total_minutes = formtaTime(time_total_minutes);
         time_total_seconds = formtaTime(time_total_seconds);
         
         if(time_count >= 0){
-            console.log('---', time_total_seconds);
+
             display_times.textContent = `tempo: ${time_total_minutes}:${time_total_seconds} `;
             time_count--;
 
         }else{
 
             clearInterval(stopInterval);
-            //retira um da sessõa apois a primeira rodada
             session--;
 
-            //verifica se ainda a sessões e chama a funcao de novo
+            //check if there are still sessions and call the function again
             if(session > 0){
                 session_timer(time_renew);
             }else{
-                //
-                console.log('acabou as sessoes');
+                location.reload(true);
             }
         }
 
@@ -58,7 +55,6 @@ function session_timer(time_secunds){
 }
 
 //
-btn_start.addEventListener('click', (e)=> {
-    e.preventDefault();
+btn_start.addEventListener('click', ()=> {
     session_timer(duration)
 } );
