@@ -1,23 +1,32 @@
-let display_sessions =  document.querySelector('.display_sessions');
-let sessions = document.querySelector('#sessions');
-let display_times = document.querySelector(".display_times");
-let minute = document.querySelector("#min");
-let second = document.querySelector("#sec");
 let btn_start = document.querySelector('#btn_start');
 
-let session = Number(sessions.value);
-let duration =  (Number(minute.value) * 60) + Number(second.value);
+let display_sessions =  document.querySelector('.display_sessions');
+let display_times = document.querySelector(".display_times");
 
+btn_start.addEventListener('click', ()=> {
+    
+    //variables that can be called as soon as the button is clicked
+    let session = Number(document.querySelector('#sessions').value);
+    let minute = document.querySelector("#min");
+    let second = document.querySelector("#sec");
+    let duration =  (Number(minute.value) * 60) + Number(second.value);
+    
+    btn_start.disabled = true;
+    btn_start.style.background = '#91ffb270';
+
+    session_timer(duration, session);
+});
 
 function formtaTime(time){
+
     let res = time < 10 ? `0${time}`: `${time}`;
     return res;
 }
 
-function session_timer(time_secunds){
+function session_timer(duration, session){
 
-    let time_renew = time_secunds;
-    let time_count = time_secunds;
+    let time_renew = duration;
+    let time_count = duration;
     
     //display number of sessions on screen
     display_sessions.textContent = `sessões: ${session}`;
@@ -43,9 +52,13 @@ function session_timer(time_secunds){
 
             //check if there are still sessions and call the function again
             if(session > 0){
-                session_timer(time_renew);
+
+                session_timer(time_renew, session);
             }else{
-                location.reload(true);
+
+                btn_start.disabled = false;
+                btn_start.style.background = '#0a8f32';
+                location.reload();
             }
         }
 
@@ -54,7 +67,3 @@ function session_timer(time_secunds){
     }, 1000);
 }
 
-//
-btn_start.addEventListener('click', ()=> {
-    session_timer(duration)
-} );
