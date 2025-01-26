@@ -58,7 +58,6 @@ function session_timer(duration, session){
 
                 btn_start.disabled = false;
                 btn_start.style.background = '#0a8f32';
-                location.reload();
             }
         }
 
